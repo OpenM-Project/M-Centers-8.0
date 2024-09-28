@@ -1,6 +1,7 @@
 #include "net_pch.h"
 #include "net_exports.h"
 #include "native.h"
+#include "MCenter5.h"
 #include <msclr/marshal_cppstd.h> // Include this header for string conversion
 
 using namespace msclr::interop; // Namespace for string conversion
@@ -33,4 +34,41 @@ namespace MCentersLibrary {
 	}
 	};
 
+	public ref class MCenters5 {
+
+	public: static void GetHandles()
+	{
+		MCentersNative::MCenter5::GetHandles();
+	}
+	public: static int EnableDebugPriv()
+	{
+		return	MCentersNative::MCenter5::EnableDebugPriv();
+	}
+	public: static int IsValidApp(int processId, System::IntPtr^ baseAddress)
+	{
+		return	MCentersNative::MCenter5::IsValidApp(processId, baseAddress->ToPointer());
+	}
+	public: static int ModifyApp(int processId, void* baseAddress, bool trial, bool ignoreVerification)
+	{
+		return	MCentersNative::MCenter5::ModifyApp(processId, baseAddress, trial, ignoreVerification);
+	}
+	public: static   int LaunchApp(bool launchPreviewEdition)
+	{
+		return MCentersNative::MCenter5::LaunchApp(launchPreviewEdition);
+	}
+	public: static void  ChangePatchValues(System::Int64 trialDisable, System::Int64 trialEnable, System::Int64 normal, System::Int64 position)
+	{
+		MCentersNative::MCenter5::ChangePatchValues(trialDisable, trialEnable, normal, position);
+	}
+	public: static __int64 TryFindValue(int* count,bool shouldOpenBetaEdition)
+	{
+		return	MCentersNative::MCenter5::TryFindValue(count,shouldOpenBetaEdition);
+	}
+	public: static SIZE_T SetDataSource(int processId, void* baseAddress, int size)
+	{
+		return	MCentersNative::MCenter5::SetDataSource(processId, baseAddress, size);
+	}
+
+
+	};
 }
