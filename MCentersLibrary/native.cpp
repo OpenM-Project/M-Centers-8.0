@@ -35,7 +35,7 @@ namespace MCentersNative {
 			}
 
 			// Read DOS Header
-			IMAGE_DOS_HEADER dosHeader;
+			IMAGE_DOS_HEADER dosHeader = {};
 			file.read(reinterpret_cast<char*>(&dosHeader), sizeof(dosHeader));
 			if (dosHeader.e_magic != IMAGE_DOS_SIGNATURE) {
 				file.close();
@@ -44,7 +44,7 @@ namespace MCentersNative {
 
 			// Move to the PE Header
 			file.seekg(dosHeader.e_lfanew, std::ios::beg);
-			DWORD peSignature;
+			DWORD peSignature=0;
 			file.read(reinterpret_cast<char*>(&peSignature), sizeof(peSignature));
 			if (peSignature != IMAGE_NT_SIGNATURE) {
 				file.close();
@@ -52,7 +52,7 @@ namespace MCentersNative {
 			}
 
 			// Read the File Header
-			IMAGE_FILE_HEADER fileHeader;
+			IMAGE_FILE_HEADER fileHeader = {};
 			file.read(reinterpret_cast<char*>(&fileHeader), sizeof(fileHeader));
 
 			if (fileHeader.Machine == IMAGE_FILE_MACHINE_AMD64) {
