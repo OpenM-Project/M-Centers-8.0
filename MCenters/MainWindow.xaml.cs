@@ -28,7 +28,9 @@ namespace MCenters
         public BindingExpression EnableInstall;
         public readonly string CurrentVersion = "";
         public MainWindow()
-        {            
+        {
+            MCentersLibrary.RawImports.Initialize();
+            MCenters5.API.PrepareProcess(false, false);
             Screens.InstallScreen = new InstallScreen();
             Screens.UninstallScreen = new InstallScreen
             {
@@ -94,7 +96,7 @@ namespace MCenters
             Environment.Exit(0);
         }
 
-        private void modOptionsButton_Click(object sender, RoutedEventArgs e)
+        private void ModOptionsButton_Click(object sender, RoutedEventArgs e)
         {
             Screens.SetScreen(Screens.ModOptionsPage);
         }
@@ -121,7 +123,7 @@ namespace MCenters
                         Dispatcher.Invoke(() =>
                         {
 
-                            Screens.ShowDialog("Update Available", $"Version {versionOnNet.ToString()} is now available for download.", "Later", "Download Now", () => Functions.OpenBrowser("https://mcenters.net/Downloads/M-Centers-8th-Edition/"), null);
+                            Screens.ShowDialog("Update Available", $"Version {versionOnNet} is now available for download.", "Later", "Download Now", () => Functions.OpenBrowser("https://mcenters.net/Downloads/M-Centers-8th-Edition/"), null);
                         });
 
                     }
