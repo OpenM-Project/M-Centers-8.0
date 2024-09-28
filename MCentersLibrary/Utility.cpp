@@ -1,7 +1,11 @@
 #include "pch.h"
 #include "Utility.h"
+#include <ShObjIdl.h>
+#include <atlbase.h>
+#include "net_imports.h"
 
 
+using MCentersLibrary::NetImports::Logger;
 namespace MCentersNative {
 	
 	bool Utility::isLittleEndian;
@@ -185,7 +189,52 @@ namespace MCentersNative {
 			  return std::string::npos;
 		  }
 
+	bool static InitializeCom() {
+		HRESULT hr = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
+		if (FAILED(hr))
+			return false;
+		return true;
+	}
+	void static UninitializeCom() {
+		CoUninitialize();
+	}
+
 	
+	DWORD Utility::LaunchAppId(LPCWSTR AUMID)
+	{
+		
+
+		DWORD pid = 0;
+		{
+			CComPtr<IApplicationActivationManager> AppActivationMgr = nullptr;
+			
+			HRESULT	hr = CoCreateInstance(CLSID_ApplicationActivationManager, nullptr,
+					CLSCTX_LOCAL_SERVER, IID_PPV_ARGS(&AppActivationMgr));
+				if (FAILED(hr))
+				{
+
+				Logger::Write(Utility::Join(L"Error:\t\tLaunchApp %s: Failed to create Application Activation Manager.hr = 0x % 08lx \n", hr).c_str());
+				}
+			
+			if (SUCCEEDED(hr))
+			{
+
+
+				hr = AppActivationMgr->ActivateApplication(AUMID, NULL, AO_NONE,
+					&pid);
+				if (FAILED(hr))
+				{
+					
+
+					Logger::Write((Utility::Join(L"Error:\t\tLaunchApp %s: Failed to Activate App. hr = 0x%08lx \n", hr).c_str()));
+				}
+			}
+		}
+
+		Logger::Write((L"Process Id:", Utility::Join(L" ", pid).c_str()));
+		
+		return pid;
+	}
 
 
 }
