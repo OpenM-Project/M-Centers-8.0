@@ -133,7 +133,7 @@ namespace MCenters
             {
                 //this code is for exceptions handled by handledexceptiontypes
                 bool? ShouldRetry = null;
-                 Application.Current.Dispatcher.Invoke(async () =>
+      await           Application.Current.Dispatcher.Invoke(async () =>
                 {
                     Screens.ErrorScreen.ErrorTitle = ErrorTitleBuilder == null ? ex.HResult.ToString() : ErrorTitleBuilder(ex);
                     Screens.ErrorScreen.ErrorSubTitle = ErrorSubtitleBuilder == null ? ex.Message : ErrorSubtitleBuilder(ex);
@@ -148,7 +148,7 @@ namespace MCenters
                     var innerEx = ex.InnerException ?? null;
 
 
-                    var innerExceptionInfo = innerEx == null ? null : new { Type = innerEx.GetType().FullName, innerEx.HResult, innerEx.StackTrace, Message = innerEx.Message };
+                    var innerExceptionInfo = innerEx == null ? null : new { Type = innerEx.GetType().FullName, innerEx.HResult, innerEx.StackTrace, innerEx.Message };
                     var innerExceptionInfoJson = innerExceptionInfo == null ? null :
     $@"{{
           ""Type"":    ""{innerExceptionInfo.Type}"",
@@ -158,7 +158,7 @@ namespace MCenters
                     
    }}
 ";
-                    var exceptionInfo = new { Type = ex.GetType().FullName, ex.HResult, ex.StackTrace, Message=ex.Message };
+                    var exceptionInfo = new { Type = ex.GetType().FullName, ex.HResult, ex.StackTrace, ex.Message };
                     var clipboardMessage =
     $@"```json
 {{
@@ -196,7 +196,7 @@ namespace MCenters
                     if (ShouldRetry == true) return;
                     
                     CurrentlyRunningAction = null;
-                }).Wait();
+                });
                 if (ShouldRetry==true) goto retry;
                 return InvokeResults.errorOccured;
 
@@ -204,7 +204,7 @@ namespace MCenters
             catch (Exception ex) when (IsCriticalException(ex))
             {
                 bool? ShouldRetry = null;
-                 Application.Current.Dispatcher.Invoke(async () =>
+              await   Application.Current.Dispatcher.Invoke(async () =>
                 {
                     Screens.ErrorScreen.ErrorTitle = ex.HResult.ToString();
                     Screens.ErrorScreen.ErrorSubTitle = ex.Message;
@@ -217,7 +217,7 @@ namespace MCenters
                     var innerEx = ex.InnerException ?? null;
 
 
-                    var innerExceptionInfo = innerEx == null ? null : new { Type = innerEx.GetType().FullName, innerEx.HResult, innerEx.StackTrace, Message=innerEx.Message };
+                    var innerExceptionInfo = innerEx == null ? null : new { Type = innerEx.GetType().FullName, innerEx.HResult, innerEx.StackTrace, innerEx.Message };
                     var innerExceptionInfoJson = innerExceptionInfo == null ? null :
     $@"{{
           ""Type"":    ""{innerExceptionInfo.Type}"",
@@ -227,7 +227,7 @@ namespace MCenters
                     
    }}
 ";
-                    var exceptionInfo = new { Type = ex.GetType().FullName, ex.HResult, ex.StackTrace, Message=ex.Message };
+                    var exceptionInfo = new { Type = ex.GetType().FullName, ex.HResult, ex.StackTrace, ex.Message };
                     var clipboardMessage =
     $@"```json
 {{
@@ -264,7 +264,7 @@ namespace MCenters
                     
                     if (ShouldRetry == true) {  return; };
                     CurrentlyRunningAction = null;
-                }).Wait();
+                });
                 if (ShouldRetry== true) goto retry;
                 return InvokeResults.errorOccured;
             }
