@@ -45,13 +45,19 @@
     <li>Press on the <strong>Back</strong> button, to go to the main menu.</li>
     <li>Click <code>"Install Cracked DLL"</code></li>
     <li>Click <code>Start</code></li>
+  </ol>
   
-  **Avoid using mode `Dll auto patch` with Windows Event Viewer running, that will cause file `Windows.ApplicationModel.Store.dll` cannot be read.**
-  
-  For Chinese users, check if you can visit raw.githubusercontent.com directly if you meet flashback or error like cannot find file `Records.txt`. If so, you can try make a hosts record manually:
-  ```
+## Faqs
+<ol>
+  <li>
+  Avoid using mode <strong>Dll auto patch</strong> with Windows Event Viewer running, that will cause file <strong>Windows.ApplicationModel.Store.dll</strong> cannot be read.
+  </li>
+  <li>  For Chinese users, check if you can visit raw.githubusercontent.com directly if you meet flashback or error like cannot find file <strong>Records.txt</strong>. If so, you can try make a hosts record manually:
+  <code>
   185.199.108.133               raw.githubusercontent.com
-  ```
+  </code>
+</li>
+
 </ol>
 
 ## How to compile M Centers from the source code
