@@ -79,7 +79,7 @@ If you live in China, check if you can visit raw.githubusercontent.com directly,
 ## How to compile M Centers from the source code
 - Clone the repository or download the repository to your device.
 - [Download](https://visualstudio.microsoft.com/) and install Visual Studio 2022.
-- Download and install .NET Desktop Development Workload in Visual Studio 2022.
+- Download and install .NET Desktop Development and Desktop development with C++ Workload in Visual Studio 2022.
 - Open the 'M Centers 8.0.sln' file with Visual Studio 2022.
 - Click on Build, and wait until it compiles M Centers.
 - Go to the build folder of your project, and tada, you have compiled M Centers from the source code. 
