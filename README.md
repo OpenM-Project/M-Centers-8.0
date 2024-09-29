@@ -106,6 +106,6 @@ my-folder/                         # Root directory.
 
 ## License
 
-Read [LICENSE](LICENSE.MD) for the license that M Centers 8th Edition uses.
+Read [LICENSE](LICENSE.MD) for the license of M Centers 8th Edition.
 
 For any other licenses (such as 3rd party licenses), read [LICENSE.THIRDPARTY](LICENSE.THIRDPARTY).
