@@ -1,24 +1,24 @@
 <p align='center'>
-  <img src='https://github.com/tinedpakgamer/M-Centers-8.0/blob/master/MCenters/images/mcenter_5_icon.png?raw=true' alt='M Centers Icon' width="30%">
+  <img src='https://github.com/OpenM-Project/M-Centers-8.0/blob/master/MCenters/images/mcenter_5_icon.png?raw=true' alt='M Centers Icon' width="30%">
 </p>
 <h1 align='center'>M Centers 8th Edition</h1>
 <p align='center'>A multi-method &amp; WIP (Stable, Safe & Working) unlocker for <em>Minecraft for Windows</em>, and any other programs that use the same licensing system as <em>Minecraft for Windows</em>.
 </p>
 <p align='center'>
 <picture>
-  <img alt="Last Release" src="https://img.shields.io/github/v/release/tinedpakgamer/M-Centers-8.0?include_prereleases">
+  <img alt="Last Release" src="https://img.shields.io/github/v/release/OpenM-Project/M-Centers-8.0?include_prereleases">
 </picture>
 <picture>
-  <img alt="Last Commit Date" src="https://img.shields.io/github/last-commit/tinedpakgamer/M-Centers-8.0">
+  <img alt="Last Commit Date" src="https://img.shields.io/github/last-commit/OpenM-Project/M-Centers-8.0">
 </picture>
 <picture>
-  <img alt="Number of Open Issues" src="https://img.shields.io/github/issues-raw/tinedpakgamer/M-Centers-8.0">
+  <img alt="Number of Open Issues" src="https://img.shields.io/github/issues-raw/OpenM-Project/M-Centers-8.0">
 </picture>
 <picture>
-  <img alt="Number of Open Pull Requests" src="https://img.shields.io/github/issues-pr/tinedpakgamer/M-Centers-8.0">
+  <img alt="Number of Open Pull Requests" src="https://img.shields.io/github/issues-pr/OpenM-Project/M-Centers-8.0">
 </picture>
 <picture>
-  <img alt="Number of Contributors" src="https://img.shields.io/github/contributors/tinedpakgamer/M-Centers-8.0">
+  <img alt="Number of Contributors" src="https://img.shields.io/github/contributors/OpenM-Project/M-Centers-8.0">
 </picture>
 </p>
 
@@ -83,8 +83,8 @@ my-folder/                         # Root directory.
 
 ## Contributors
 
-<a href="https://github.com/tinedpakgamer/M-Centers-8.0/graphs/contributors">
-  <img src="https://contrib.rocks/image?i=1&repo=tinedpakgamer/M-Centers-8.0"/>
+<a href="https://github.com/OpenM-Project/M-Centers-8.0/graphs/contributors">
+  <img src="https://contrib.rocks/image?i=1&repo=OpenM-Project/M-Centers-8.0"/>
 </a>
 
 ## License
